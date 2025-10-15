@@ -1,0 +1,67 @@
+<!--
+    //T3: Primeros pasos con JavaScript en una aplicación web / Primers passos amb JavaScript en una aplicació web
+    //U2: Trabajo con el DOM / Treballant amb el DOM
+    -- CASTELLANO
+    -- EJERCICIO 3.2.3 ENUNCIADO: 
+	Creación y eliminación de elementos del DOM:	
+	Dado el siguiente documento HTML, se nos pide:
+	- Crear una función, a la que llamaremos (createTitle) que reciba un texto y que, tras comprobar en el DOM que no existe un elemento de la clase "title" (si existe no hará nada), cree un elemento de tipo <div> 
+	  al cual definiremos de la clase "title" y al que, antes de añadirlo al elemento que tiene id = myContent del DOM, añadiremos un elemento de tipo <H1> que contenga en su interior el texto recibido por parámetro.
+	- Crear una función, a la que llamaremos (createParagraph) que reciba un texto y que, tras comprobar en el DOM que existe un elemento de la clase "title" (si no existe no hará nada) 
+	  cree un elemento de tipo <p> al cual definiremos con la clase "paragraph" y lo añadiremos al elemento de la clase "title" definido anteriormente.
+	- Implementar llamadas a las funciones anteriores de manera que creemos en el DOM un elemento de la clase "title" y le añadamos 3 elementos de la clase "paragraph" con textos distintos.
+	- Finalmente, eliminar uno de los elementos de la clase "paragraph" creados anteriormente.	
+	  
+	Consejo: para comprobar si un elemento existe: si lo capturamos en una variable desde el DOM con el método querySelector y no existe, el valor de la variable será null. 
+  	
+    -- CATALÀ
+    -- EXERCICI 3.2.2 ENUNCIAT: 
+	Creació i eliminació d'elements del DOM:
+	Donat el següent document HTML, se'ns demana:
+	- Crear una funció, a la qual anomenarem (createTitle) que rebi un text i que, després de comprovar al DOM que no existeix un element de la classe "title" (si existeix no farà res), creï un element de tipus <div>
+	  al qual definirem de la classe "title" i al que, abans d'afegir-lo a l'element amb id = myContent del DOM, afegirem un element de tipus <H1> que contingui al seu interior el text rebut per paràmetre.
+	- Crear una funció, a la qual anomenarem (createParagraph) que rebi un text i que, després de comprovar al DOM que existeix un element de la classe "title" (si no existeix no farà res)
+	  creï un element de tipus <p> el qual el definirem amb la classe "paragraph" i l'afegirem a l'element de la classe "title" definit anteriorment.
+	- Implementar trucades a les funcions anteriors de manera que creem al DOM un element de la classe "title" i hi afegim 3 elements de la classe "paragraph" amb textos diferents.
+	- Finalment, elimineu un dels elements de la classe "paragraph" creats anteriorment.
+	
+	Consell: per comprovar si un element existeix: si el capturem en una variable des del DOM amb el mètode querySelector i no hi existeix, el valor de la variable serà null.
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>T3U2_EX3</title>
+		<style type="text/css">
+			.title > h1{
+				font-size: 30px;
+				text-align: center;	
+				background-color: black;
+				border: 2px solid blue;
+				color: yellow;
+				font-weight: bold;
+			}
+			.paragraph {
+				padding: 2px;
+				text-align: center;				
+				font-size: 14px;
+			}
+		</style>
+    </head>
+    <body>
+        <div id="myContent" class="content"></div>
+    </body>
+	<script defer id="solutionJS">
+        //Escribe aquí tu solución / escriviu aquí la vostra solució:
+		
+	</script>
+    <script defer id="test">
+        /**
+        * TEST
+        * The purpose of this code is purely for TESTING PURPOSES, 
+        * Do not modify this script
+        */
+        window.test = [document.querySelector("#myContent"), createParagraph, createTitle];
+    </script>
+</html>	

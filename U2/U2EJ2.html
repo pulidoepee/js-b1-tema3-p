@@ -1,0 +1,57 @@
+<!--
+    //T3: Primeros pasos con JavaScript en una aplicación web / Primers passos amb JavaScript en una aplicació web
+    //U2: Trabajo con el DOM / Treballant amb el DOM
+    -- CASTELLANO
+    -- EJERCICIO 3.2.2 ENUNCIADO: 
+        Modificación de los elementos del DOM.
+        Dado el siguiente documento HTML que incluye en su cuerpo un elemento DIV identificado como "myContent" que contiene un texto. Nos piden modificarlo para conseguir lo siguiente:
+        1.- Definir una nueva clase (entre las etiquetas <style></style>) que denominaremos featuredContent y a la que asignaremos un color de fondo negro, un borde azul de 2 píxeles 
+            y un texto de color amarillo con una altura de texto de 30 píxeles y en negrita.
+        2.- Mediante un script, acceder al elemento y modificar su contenido para que en lugar de "INITIAL CONTENT" en su interior contenga el texto "FEATURED CONTENT".
+        3.- A continuación, mediante el script anterior, desasignarle la clase que tiene ahora asignada "normalContent" (pero sin que pierda las propiedades definidas en la clase "content") 
+            y añadirle la clase que hemos definido "featuredContent".
+            
+    -- CATALÀ
+    -- EXERCICI 3.2.2 ENUNCIAT: 
+        Modificació dels elements del DOM.
+        Donat el següent document HTML que inclou al seu cos un element DIV identificat com a "myContent" que conté un text. Ens demanen modificar-lo per aconseguir el següent:
+        1.- Definir una nova classe (entre les etiquetes <style></style>) que anomenarem "featuredContent" i a la qual assignarem un color de fons negre, una vora blava de 2 píxels
+            i un text de color groc amb una alçada de text de 30 píxels i en negreta.
+        2.- Mitjançant un script, accedir a l'element i modificar-ne el contingut perquè en lloc d'"INITIAL CONTENT" al seu interior contingui el text "FEATURED CONTENT".
+        3.- A continuació, mitjançant l'script anterior, desasignar-li la classe que té ara assignada "normalContent" (però sense que perdi les propietats definides a la classe "content")
+            i afegir-hi la classe que hem definit "featuredContent".       
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>T3U2_EX2</title>
+		<style type="text/css" id="solutionCSS">
+			.content {
+				padding: 20px;
+				text-align: center;				
+			}
+			.normalContent{
+				font-size: 10px;
+				background-color: grey;
+			}
+            /*Escribe aquí tu solución / escriviu aquí la vostra solució:*/
+            
+        </style>
+    </head>
+    <body>
+        <div id="myContent" class="content normalContent">INITIAL CONTENT</div>
+        <script defer id="solutionJS">
+            //Escribe aquí tu solución / escriviu aquí la vostra solució:
+			
+        </script>
+        <script defer id="test">
+            /**
+            * TEST
+            * The purpose of this code is purely for TESTING PURPOSES, 
+            * Do not modify this script
+            */
+            window.test = document.querySelector("#myContent");
+        </script>
+    </body>
+</html>	
