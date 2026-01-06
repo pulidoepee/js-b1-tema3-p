@@ -24,6 +24,34 @@ localStorage.setItem(
 	);
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
+class Triangle {
+	constructor(base, height, rightTriangle) {
+		this.base = base;
+		this.height = height;
+		this.rightTriangle = rightTriangle;
+	}
+	area() {
+		return (this.base * this.height) / 2;
+	}
+	perimeter() {
+		if (this.rightTriangle) {
+			const hypotenuse = Math.sqrt(
+				this.base * this.base + this.height * this.height
+			);
+			return this.base + this.height + hypotenuse;
+		} else {
+			// Assuming an equilateral triangle for non-right triangles
+			return this.base * 3;
+		}
+	}
+}
+const myTriangleData = JSON.parse(localStorage.getItem("myTriangles"));
+const myTriangles = myTriangleData.map(
+	(t) => new Triangle(t.base, t.height, t.rightTriangle)
+);
+myTriangles.pop();
+localStorage.setItem("myTriangles", JSON.stringify(myTriangles));
+
 
 /**
  * TEST

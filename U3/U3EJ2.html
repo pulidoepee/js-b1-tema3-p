@@ -78,7 +78,19 @@
     </body>
     <script defer id="solutionJS">
         //Escribe aquí tu solución / escriviu aquí la vostra solució:
-        
+        const redDiv = document.getElementsByClassName("red")[0];
+        const greenDiv = document.getElementsByClassName("green")[0];
+        const orangeDiv = document.getElementsByClassName("orange")[0];
+        const myContent = document.getElementById("myContent");
+        redDiv.addEventListener("click", function() {
+            myContent.innerHTML = "red";
+          });
+          greenDiv.addEventListener("click", function() {
+            myContent.innerHTML = "green";
+          });
+          orangeDiv.addEventListener("click", function() {
+            myContent.innerHTML = "orange";
+          });
     </script>
     <script defer id="test">
         /**

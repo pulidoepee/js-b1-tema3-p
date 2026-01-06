@@ -36,7 +36,13 @@
 				background-color: grey;
 			}
             /*Escribe aquí tu solución / escriviu aquí la vostra solució:*/
-            
+            .featuredContent {
+                background-color: black;
+                border: 2px solide blue;
+                color: yellow;
+                font-size: 30px;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -44,6 +50,10 @@
         <script defer id="solutionJS">
             //Escribe aquí tu solución / escriviu aquí la vostra solució:
 			
+            const myContentDiv = document.getElementById("myContent");
+            myContentDiv.textContent = "FEATURED CONTENT";
+            myContentDiv.classList.remove("normalContent");
+            myContentDiv.classList.add("featuredContent");
         </script>
         <script defer id="test">
             /**

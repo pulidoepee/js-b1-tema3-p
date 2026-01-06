@@ -28,30 +28,33 @@
     <body>
         <h1>Dog Form</h1>
         <!--Escribe aquí tu solución / escriviu aquí la vostra solució:-->
-        <form>
-            <label >Dog's name:</label>
-            <input type="" id="name" name="" required><br><br>
+        <form action ="mailto:myymail@uoc.edu" method = "post">
+            <!--Dog's name -->
+            <label for="name">Dog's name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <!--Dog's age-->
+            <label for="age">Dog's age:</label>
+            <input type="number" id="age" name="age" min="0" max="20" required><br><br>
+            <!--Dog's gender-->
+            <label> Dog's gender:</label><br>
+            <input type="radio" id="male" name="gender" value="Male" required><br>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="Female" required><br>
+            <label for="female">Female</label><br><br>
 
-            <label >Dog's age:</label>
-            <input type="" id="age" name="age" min="0" max="20" required><br><br>
-
-            <label>Dog's gender:</label>
-            <input type="" id="male" name="gender" value="Male" required>
-            <label >Male</label>
-            <input type="" id="female" name="gender" value="Female">
-            <label >Female</label><br><br>
-
+            <!--Vaccinations received:-->
             <h4>Vaccinations received:</h4>
-            <input type="" id="rabies" name="vaccinations[]" value="Rabies">
-            <label >Rabies</label><br>
-            <input type="" id="parvovirus" name="vaccinations[]" value="Parvovirus">
-            <label >Parvovirus</label><br>
-            <input type="" id="distemper" name="vaccinations[]" value="Distemper">
-            <label >Distemper</label><br>
-            <input type="" id="hepatitis" name="vaccinations[]" value="Hepatitis">
-            <label >Hepatitis</label><br><br>
-
-            <label >Dog's breed:</label>
+            <input type="checkbox" id="rabies" name="vaccinations[]" value="Rabies">
+            <label for="rabies">Rabies</label><br>
+            <input type="checkbox" id="parvovirus" name="vaccinations[]" value="Parvovirus">
+            <label for="parvovirus">Parvovirus</label><br>
+            <input type="checkbox" id="distemper" name="vaccinations[]" value="Distemper">
+            <label for="distemper">Distemper</label><br>
+            <input type="checkbox" id="hepatitis" name="vaccinations[]" value="Hepatitis">
+            <label for="hepatitis">Hepatitis</label><br><br>
+            
+            <!--Dog's breed-->
+            <label for="breed">Dog's breed:</label>
             <select id="breed" name="breed" required>
                 <option value="">Select a breed</option>
                 <option value="Labrador Retriever">Labrador Retriever</option>

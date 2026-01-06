@@ -37,7 +37,7 @@
 			.title > h1{
 				font-size: 30px;
 				text-align: center;	
-				background-color: black;
+				background-color: rgb(0, 0, 0);
 				border: 2px solid blue;
 				color: yellow;
 				font-weight: bold;
@@ -54,7 +54,31 @@
     </body>
 	<script defer id="solutionJS">
         //Escribe aquí tu solución / escriviu aquí la vostra solució:
-		
+		function createTitle(text) {
+			if (!document.querySelector(".title")) {
+				const titleDiv = document.createElement("div");
+				titleDiv.className = "title";
+				const h1Element = document.createElement("h1");
+				h1Element.textContent = text;
+				titleDiv.appendChild(h1Element);
+				document.getElementById("myContent").appendChild(titleDiv);
+			}
+		}
+
+		function createParagraph(text) {
+			if (document.querySelector(".title")) {
+				const paragraph = document.createElement("p");
+				paragraph.className = "paragraph";
+				paragraph.textContent = text;
+				document.querySelector(".title").appendChild(paragraph);
+			}
+		}
+
+		createTitle("My Title");
+		createParagraph("First paragraph");
+		createParagraph("Second paragraph");
+		createParagraph("Third paragraph");
+
 	</script>
     <script defer id="test">
         /**

@@ -47,8 +47,19 @@
     </div>
     <script defer id="solutionJS">
         //Escribe aquí tu solución / escriviu aquí la vostra solució:
-          
-	</script>
+         const circle = document.getElementById(`circle`);
+         const rect = document.getElementById(`rect`);
+         const polygon = document.getElementById(`polygon`);
+         circle.addEventListener("mouseover", function() {
+            circle.className.baseVal = "green";
+          });
+          rect.addEventListener("mouseover", function() {
+            rect.className.baseVal = "orange";
+          });
+          polygon.addEventListener("mouseover", function() {
+            polygon.className.baseVal = "red";
+          });
+    </script>
     <script defer id="test">
         /**
         * TEST

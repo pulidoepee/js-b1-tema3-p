@@ -7,7 +7,7 @@
 	"tinted windows" (cristales tintados) o "armored windows" (cristales blindados) no sea posible seleccionar la opción de techo corredizo (sunroof) ni viceversa,
 	debido a que son incompatibles por políticas de seguridad.
 
-	-- CATALÀ
+	-- CATALÀs
 	-- EXERCICI 3.4.2 ENUNCIAT:
 	Donat el següent codi HTML d'un formulari, on es recullen les dades dels vehicles d'un concessionari, escriu un script de manera que, si en els extres se selecciona 
 	"tinted windows" (vidres tintats) o "armored windows" (vidres blindats) no sigui possible seleccionar l'opció de sostre corredís (sunroof) ni viceversa, 
@@ -68,7 +68,33 @@
         </form>
         <script defer id="solutionJS">
         //Escribe aquí tu solución / escriviu aquí la vostra solució:
+        const sunroofCheckbox = document.getElementById('sunroof');
+        const armoredWindowsCheckbox = document.getElementById('armored-windows');
+        const tintedWindowsCheckbox = document.getElementById('tinted-windows');
+        
+        function updateCheckboxStates(){
+            const anyWindowSelected = armoredWindowsCheckbox.checked || tintedWindowsCheckbox.checked;
+            if (sunroofCheckbox.checked) {
+                armoredWindowsCheckbox.checked = false;
+                tintedWindowsCheckbox.checked = false;
+                armoredWindowsCheckbox.disabled = true;
+                tintedWindowsCheckbox.disabled = true;
+            } else if (anyWindowSelected) {
+                sunroofCheckbox.checked= false;
+                sunroofCheckbox.disabled = true;
+                armoredWindowsCheckbox.disabled = false;
+                tintedWindowsCheckbox.disabled = false;
 
+
+            } else {
+                sunroofCheckbox.disabled = false;
+                armoredWindowsCheckbox.disabled = false;
+                tintedWindowsCheckbox.disabled = false;
+            }
+        }
+        sunroofCheckbox.addEventListener('change', updateCheckboxStates);
+        armoredWindowsCheckbox.addEventListener('change', updateCheckboxStates);
+        tintedWindowsCheckbox.addEventListener('change', updateCheckboxStates);
         </script>
         <script defer id="test">
             /**
@@ -78,11 +104,11 @@
             */
             let resultTest = new Array();
             
-            document.querySelector('#armored-windows').checked = true;
-            document.querySelector('#tinted-windows').checked = true;
+            document.querySelector('#armored-windows').checked = false;
+            document.querySelector('#tinted-windows').checked = false;
             document.querySelector('#sunroof').dispatchEvent(new Event('change'));
             resultTest.push([document.querySelector('#armored-windows').checked, document.querySelector('#tinted-windows').checked]);
-            document.querySelector('#sunroof').checked = true;
+            document.querySelector('#sunroof').checked = false;
             document.querySelector('#armored-windows').dispatchEvent(new Event('change'));
             resultTest.push(document.querySelector('#sunroof').checked);
             document.querySelector('#tinted-windows').dispatchEvent(new Event('change'));
